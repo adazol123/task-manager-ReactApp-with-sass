@@ -1,0 +1,20 @@
+@use 'utilities';
+@use 'layout';
+@use 'base';
+@use 'app';
+@use 'button';
+@use 'form';
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+      background: utilities.$surface-dark;
+      color: utilities.$surface-light;
+    }
+}
+@media (prefers-color-scheme: light) {
+    body {
+      background: utilities.$surface-light;
+      color: utilities.$surface-dark;
+    }
+}

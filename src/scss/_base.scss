@@ -1,0 +1,29 @@
+
+* {
+  font-family: var(--font-family-sans-serif);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::selection {
+  background: var(--theme-primary);
+  color: var(--theme-dark-background);
+}
+html, body {
+  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // background-color: var(--theme-dark-background);
+    font-size: 14px;
+     font-family: var(--font-family-sans-serif);
+  }
+  
+  code {
+    font-family: var(--font-family-source-code)
+  }
+
+  i {
+    display: block;
+    text-align: center;
+  }
+

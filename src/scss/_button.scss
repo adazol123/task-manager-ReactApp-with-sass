@@ -1,0 +1,155 @@
+
+button {
+    background: none;
+    border-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 8px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    color: var(--theme-text-color);
+}
+
+.button {
+    
+    &-default {
+       
+        border-radius: 0;
+        position: relative;
+        overflow: hidden;
+        color: var(--theme-primary);
+
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 100%;
+            width: 100%;
+            height: 2px;
+            background: var(--theme-primary);
+            transition: 0.3s ease;
+            -webkit-transition: 0.3s ease;
+            -moz-transition: 0.3s ease;
+            -ms-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+}
+        &:hover, &:focus {
+            color: rgba($color: #5F77EC, $alpha: 0.8);
+            &::before {
+                right: 0;
+                background: rgba($color: #5F77EC, $alpha: 0.7);
+            }
+        }
+        &:active {
+            color: rgba($color: #3351E6, $alpha: 0.8);
+            &::before{
+                right: 0;
+                background: rgba($color: #3351E6, $alpha: 0.8);
+            }
+        }
+    }
+
+    &-solid {
+        font-weight: 700;
+        padding: 8px 16px;
+        background: var(--theme-primary);
+        color: var(--theme-background);
+        box-shadow: 0px 0px 4px 1px rgba(3, 3, 3, 0.1);
+
+        &:hover, &:focus {
+            background: rgba($color: #5F77EC, $alpha: 0.9);
+            box-shadow: 0px 0px 4px 1px rgba(3, 3, 3, 0.2);
+        }
+        &:active {
+            background: rgba($color: #3351E6, $alpha: 0.8);
+            box-shadow: none;
+        }
+       
+    }
+    &-outline {
+        font-weight: 600;
+        padding: 8px 16px;
+        border: 2px solid;
+        border-color: var(--theme-primary);
+        font-size: 14px;
+        letter-spacing: 0.4px;
+        color: var(--theme-primary);
+        box-shadow: 0px 0px 4px 1px rgba(3, 3, 3, 0.2);
+        backdrop-filter: saturate(80%) blur(4px);
+
+        &:hover, &:focus{
+            background:rgba(3, 3, 3, 0.01);
+            box-shadow: 0px 0px 4px 1px rgba(3, 3, 3, 0.08);
+            
+        }
+        &:active {
+            background:rgba(10, 10, 10, 0.1);
+            box-shadow: none;
+        }
+    }
+
+    &-link {
+        text-transform: none;
+        padding: 0 8px;
+        line-height: 30px;
+        border: dashed 0.1px;
+        border-color: transparent;
+
+        &:hover, &:focus {
+            color: var(--theme-primary);
+            text-decoration: line-through;
+        }
+        &:active {
+            border: dashed 0.1px;
+        }
+    }
+
+    &-ghost {
+        font-weight: 400;
+        padding: 8px 16px;
+        background:rgba(107, 107, 107, 0.005);
+        backdrop-filter: saturate(100%) blur(15px);
+        border: 0.01px dashed;
+        border-color: transparent;
+
+        &:hover, &:focus {
+            background:rgba(107, 107, 107, 0.05);
+            
+        }
+        &:active {
+            background: rgba(107, 107, 107, 0.01);
+            border: 0.01px solid;
+        }
+    }
+
+    &-tag {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        text-transform: none;
+        color: var(--color-gray);
+        padding: 0 8px;
+
+        &:hover, &:focus, &:active {
+            background:var(--theme-primary);
+            color: var(--theme-dark-background);
+        }
+
+        &-active {
+            @extend .button-tag;
+            background:var(--theme-primary);
+            color: var(--theme-dark-background);
+        }
+
+    }
+
+
+}

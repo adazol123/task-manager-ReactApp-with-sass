@@ -1,0 +1,114 @@
+@mixin margin($y, $x) {
+    maring: $y  $x;
+}
+
+.flex {
+    display: flex;
+
+    &-center {
+        @extend .flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        &-row {
+            @extend .flex-center;
+            flex-direction: row;
+        }
+        &-column {
+            @extend .flex-center;
+            flex-direction: column;
+        }
+    }
+
+    &-between {
+        @extend .flex;
+
+        &-row {
+            @extend .flex-center;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-column {
+            @extend .flex-center;
+            flex-direction: column;
+        }
+    }
+}
+.grid {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+
+    &-center {
+        @extend .grid;
+        place-content: center;
+    }
+}
+
+.headline-5 {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.04px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.link {
+    &-special {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.04px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    padding: 0px 32px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+
+    &-sm {
+        @extend .container;
+        min-width: 640px;
+    }
+    &-md {
+        @extend .container;
+        min-width: 768px;
+        max-height: 500px;
+    }
+    &-lg {
+        @extend .container;
+        min-width: 1024px;
+    }
+
+
+}
+.m {
+    &b-16 {
+        margin-bottom: 16px;
+    }
+    &x-4 {
+        @include margin(0, 4px);
+    }
+}
+
+.pos-relate {
+    position: relative;
+}
+
+.pos-absolute {
+    position: sticky;
+    top: 0;
+    left: 0;
+}

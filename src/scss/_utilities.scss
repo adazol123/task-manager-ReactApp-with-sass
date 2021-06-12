@@ -1,0 +1,140 @@
+@use 'sass:meta';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@mixin google-font($family) {
+    @import url("http://fonts.googleapis.com/css?family=#{$family}");
+  }
+  
+@include google-font("Droid Sans");
+
+$font-family-sans-serif: Poppins, sans-serif ;
+$font-family-source-code: 'source-code-pro', Menlo, Monaco, Consolas, 'Courier New',monospace;
+
+$surface-black: #20202C;
+$surface-dark: #171A1C;
+$surface-dim: #2E3538;
+$surface-light: #E0E6EB;
+$surface-white: #FAFAFA;
+
+/**color schemes **/
+$gray-50: hsl(195, 15%, 95%);
+$gray-100: hsl(200, 12%, 95%);
+$gray-200: hsl(203, 11%, 85%);
+$gray-300: hsl(203, 10%, 75%);
+$gray-400: hsl(200, 10%, 65%);
+$gray-500: hsl(201, 10%, 55%);
+$gray-600: hsl(198, 10%, 45%);
+$gray-700: hsl(200, 10%, 35%);
+$gray-800: hsl(198, 10%, 25%);
+$gray-900: hsl(195, 11%, 15%);
+
+$green-50: hsl(156, 38%, 95%);
+$green-100: hsl(156, 49%, 90%);
+$green-200: hsl(155, 61%, 85%);
+$green-300: hsl(155, 71%, 80%);
+$green-400: hsl(155, 80%, 75%);
+$green-500: hsl(155, 79%, 65%);
+$green-600: hsl(155, 78%, 55%);
+$green-700: hsl(155, 77%, 45%);
+$green-800: hsl(155, 76%, 35%);
+$green-900: hsl(155, 75%, 25%);
+
+$indigo-50: hsl(228, 38%, 95%);
+$indigo-100: hsl(230, 49%, 90%);
+$indigo-200: hsl(231, 61%, 85%);
+$indigo-300: hsl(230, 71%, 80%);
+$indigo-400: hsl(230, 80%, 75%);
+$indigo-500: hsl(230, 79%, 65%);
+$indigo-600: hsl(230, 78%, 55%);
+$indigo-700: hsl(230, 77%, 45%);
+$indigo-800: hsl(230, 76%, 35%);
+$indigo-900: hsl(230, 75%, 25%);
+
+$rose-50: hsl(330, 38%, 95%);
+$rose-100: hsl(329, 49%, 90%);
+$rose-200: hsl(330, 61%, 85%);
+$rose-300: hsl(330, 71%, 80%);
+$rose-400: hsl(330, 80%, 75%);
+$rose-500: hsl(330, 79%, 65%);
+$rose-600: hsl(330, 78%, 55%);
+$rose-700: hsl(330, 77%, 45%);
+$rose-800: hsl(330, 76%, 35%);
+$rose-900: hsl(330, 75%, 25%);
+
+$gold-50: hsl(54, 38%, 95%);
+$gold-100: hsl(50, 49%, 90%);
+$gold-200: hsl(50, 61%, 85%);
+$gold-300: hsl(50, 71%, 80%);
+$gold-400: hsl(50, 80%, 75%);
+$gold-500: hsl(50, 79%, 65%);
+$gold-600: hsl(50, 78%, 55%);
+$gold-700: hsl(50, 77%, 45%);
+$gold-800: hsl(50, 76%, 35%);
+$gold-900: hsl(50, 75%, 25%);
+
+
+/** end of color schemes **/
+
+
+
+
+
+:root {
+
+    --font-family-sans-serif: #{meta.inspect($font-family-sans-serif)};
+    --font-family-source-code:#{meta.inspect($font-family-source-code)};
+    --theme-dark-background: #{$surface-light};
+    --theme-text-color:#{$surface-dark};
+    --theme-primary: #{$indigo-500};
+    --theme-secondary: #{$green-700};
+
+    --theme-danger-color: #{$rose-600};
+    --theme-danger-background: #{$rose-300};
+    --theme-warning-color:#{$gold-900};
+    --theme-warning-background:#{$gold-50};
+    --color-gray: #{$gray-300};
+    --color-gray-400: #{$gray-400};
+    --color-gray-600: #{$gray-600};
+    --color-indigo-100: #{$indigo-100};
+    --color-indigo-600: #{$indigo-600};
+    --color-gold-50: #{$gold-50};
+    --color-gold-900: #{$gold-900};
+}
+
+body[data-theme="dark-mode"] {
+    :root {
+        --theme-primary: #{$indigo-500};
+        --theme-dark-background: #{$surface-light};
+        --theme-text-color: #{$surface-dark};
+    }
+}
+body[data-theme="light-mode"] {
+    :root {
+        --theme-primary:#{$green-700};
+        --theme-dark-background: #{$surface-dark};
+        --theme-text-color: #{$surface-light};
+    }
+}
+
+*::-webkit-scrollbar {
+    width: .5rem;
+    padding: 4px 0;
+    height: 400px;
+}
+   
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+   
+*::-webkit-scrollbar-thumb {
+    background-color: var(--theme-primary);
+    outline: none;
+    height: 4px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    margin: 8px 0;
+  }
+
