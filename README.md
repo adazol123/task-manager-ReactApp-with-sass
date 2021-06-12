@@ -8,6 +8,8 @@
     <h3 align="center"> Task Manager </h3>
 </p>
 
+![task-manager](./src/assets/img/task-manager.png)
+
 ### Debugging
 
 First, run the development server:
@@ -16,10 +18,15 @@ First, run the development server:
 
 ```bash
 
-$ npm run dev
+$ npm run start
 # or
-$ yarn dev
+$ yarn start
 
+```
+Run sass watcher
+
+```bash
+$ sass --watch src/scss:src/css
 ```
 
 ----
