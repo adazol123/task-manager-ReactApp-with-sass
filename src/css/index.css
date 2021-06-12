@@ -34,18 +34,18 @@ body[data-theme=light-mode] :root {
   --theme-text-color: #E0E6EB;
 }
 
-*::-webkit-scrollbar {
+.task-form ::-webkit-scrollbar {
   width: 0.5rem;
   padding: 4px 0;
   height: 400px;
 }
 
-*::-webkit-scrollbar-track {
+.task-form ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 
-*::-webkit-scrollbar-thumb {
+.task-form ::-webkit-scrollbar-thumb {
   background-color: var(--theme-primary);
   outline: none;
   height: 4px;
@@ -80,13 +80,17 @@ body[data-theme=light-mode] :root {
   flex-direction: column;
 }
 
-.grid, .grid-center {
+.grid, .grid-top, .grid-center {
   display: grid;
   height: 100vh;
   width: 100%;
 }
 .grid-center {
   place-content: center;
+}
+.grid-top {
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .headline-5 {
@@ -119,6 +123,7 @@ body[data-theme=light-mode] :root {
 }
 .container-sm {
   min-width: 640px;
+  overflow-y: hidden;
 }
 .container-md {
   min-width: 768px;
@@ -181,9 +186,9 @@ i {
   background-color: var(--theme-dark-background);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
   gap: 5px;
@@ -197,9 +202,9 @@ i {
   position: absolute;
   font-weight: 600;
   font-size: 60rem;
-  color: rgba(185, 193, 198, 0.05);
+  color: rgba(185, 193, 198, 0.04);
   top: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .text-head {

@@ -5,7 +5,7 @@ import { Task } from './Task'
 
 export const Form = () => {
     return (
-        <div>
+        <div className='task-form'>
             <div className="flex-center pos-relative ">
                 <form className="container-md bg-dark pos-relative">
                     <div className=" pos-absolute">

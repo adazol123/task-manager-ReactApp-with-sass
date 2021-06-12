@@ -45,6 +45,13 @@
         @extend .grid;
         place-content: center;
     }
+
+    &-top {
+        @extend .grid;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
 }
 
 .headline-5 {
@@ -81,6 +88,7 @@
     &-sm {
         @extend .container;
         min-width: 640px;
+        overflow-y: hidden;
     }
     &-md {
         @extend .container;
